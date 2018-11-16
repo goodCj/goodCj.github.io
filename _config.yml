@@ -70,6 +70,26 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
+# hexo-neat
+
+neat_enable: true
+
+neat_html:
+  enable: true
+  exclude:
+
+neat_css:
+  enable: true
+  exclude:
+    - '*.min.css'
+
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js'
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
