@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title>vue的生命周期</title>
+      <link href="/2018/11/16/vueDemo/lifeCycle/"/>
+      <url>/2018/11/16/vueDemo/lifeCycle/</url>
+      
+        <content type="html"><![CDATA[<!-- build time:Fri Nov 16 2018 15:32:18 GMT+0800 (中国标准时间) --><!-- rebuild by neat -->]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue的生命周期 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>安装必需组件</title>
+      <link href="/2018/11/08/blogBuilding/blogBuilding/"/>
+      <url>/2018/11/08/blogBuilding/blogBuilding/</url>
+      
+        <content type="html"><![CDATA[<!-- build time:Fri Nov 16 2018 15:47:54 GMT+0800 (中国标准时间) --><h1 id="安装必备组件"><a href="#安装必备组件" class="headerlink" title="安装必备组件"></a>安装必备组件</h1><ul><li><p>安装<strong>node.js</strong><br><a href="https://nodejs.org/en/" title="node官网" target="_blank" rel="noopener">node官网</a></p></li><li><p>安装<strong>git</strong>工具<br><a href="https://git-scm.com/" title="git官网" target="_blank" rel="noopener">git官网</a></p></li><li><p>安装<strong>hexo</strong></p><ul><li><p>先创建一个文件夹，在该文件夹中git bush</p></li><li><p>安装hexo命令 <code>npm i -g hexo</code></p></li><li><p>初始化命令 <code>hexo init</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public：存放的是生成的页面</span><br><span class="line">scaffolds：命令生成文章等的模板</span><br><span class="line">source：用命令创建的各种文章</span><br><span class="line">themes：主题</span><br><span class="line">_config.yml：整个博客的配置</span><br></pre></td></tr></table></figure></li></ul></li></ul><a id="more"></a><h1 id="博客搭建步骤"><a href="#博客搭建步骤" class="headerlink" title="博客搭建步骤"></a>博客搭建步骤</h1><ol><li><p>创建github账户，创建代码库</p></li><li><p>创建秘钥，将本地仓库与远程仓库建立连接</p><ul><li><p><code>ssh-keygen -t rsa -C &quot;xxxx@qq.com&quot;</code> 命令行中输入该指令，创建秘钥</p></li><li><p>打开 <code>C:\Users\lijun.ssh\id_rsa.pub</code> 中的文件，将里面内容复制黏贴进 <code>https://github.com/settings/ssh</code> 的new SSH key中</p></li><li>输入 <code>ssh -T git@github.com</code> 测试是否成功，若返回 <code>Hi lijun! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code> 即成功!</li></ul></li><li><p>配置git个人信息</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;xxxxx&quot;</span><br><span class="line">git config --global user.email &quot;xxxxx@qq.com&quot;</span><br></pre></td></tr></table></figure></li><li><p>配置 Deployment<br>在hexo配置文件夹中站点配置文件<code>_config.yml</code>中找到<code>Deployment</code>,配置以下信息</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:lijun/lijun.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></li><li><p>hexo命令本地提交到github</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 删除旧的public文件</span><br><span class="line">hexo clean</span><br><span class="line">// 生成新的public文件</span><br><span class="line">hexo g</span><br><span class="line">// 启动服务</span><br><span class="line">hexo s</span><br><span class="line">// 开始部署到github</span><br><span class="line">hexo d</span><br><span class="line">//创建新md</span><br><span class="line">hexo new page 文件名</span><br></pre></td></tr></table></figure></li></ol><h1 id="将hexo迁移到另一台电脑"><a href="#将hexo迁移到另一台电脑" class="headerlink" title="将hexo迁移到另一台电脑"></a>将hexo迁移到另一台电脑</h1><ol><li><p>在<code>goodcj.github.io</code>仓库中新创建一个分支，分支名为<code>hexo</code></p></li><li><p>将旧电脑的hexo的部署环境文件夹中的所有东西上传到新分支<code>hexo</code>中</p><ul><li>将 goodcj.github.io 仓库 git clone 克隆到本地新建文件夹中</li><li>此时可以查看本地分支为master，使用命令新建一个分支并切换到该分支中，并删除该分支中除了.git的所有文件</li><li>将旧电脑的hexo部署环境中所有文件黏贴到该分支中</li><li>使用git命令将该分支中上传到远程仓库中</li></ul></li></ol><h1 id="创建新分支，上传代码的git命令"><a href="#创建新分支，上传代码的git命令" class="headerlink" title="创建新分支，上传代码的git命令"></a>创建新分支，上传代码的git命令</h1><ul><li>git branch 查看分支</li><li>git branch 新分支名字 创建新分支</li><li>git checkout 新分支名字 切换到新分支</li><li>git status 查看分支状态</li><li>git add . 将所有文件添加进缓存中</li><li>git commit -m “注释” 将暂存区中的文件添加到本地仓库</li><li>git push origin 新分支名字 将文件上传到远程仓库的对应分支中</li><li>git clone 分支地址 克隆远程仓库对应分支文件</li><li>git pull 拉取远程仓库对应分支文件</li></ul><!-- rebuild by neat -->]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客搭建 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+            <tag> hexo、git命令 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
+</search>
