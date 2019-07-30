@@ -1,0 +1,9 @@
+git branch 查看本地所有分支
+
+git branch -r  查看远程所有分支
+
+git branch -a 列出所有远程分支和本地分支
+
+dqdwqdqw
+
+dqwdwqdqw
